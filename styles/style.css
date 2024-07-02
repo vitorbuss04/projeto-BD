@@ -75,6 +75,9 @@ main table .acao a, main table .acao button {
 main table .acao button {
   background-color: #cf0000;
 }
+main .card-livro {
+  background-color: red;
+}
 
 * {
   margin: 0;

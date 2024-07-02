@@ -20,50 +20,30 @@
             <h2>Lista de livros</h2>
             <a href="adicionar-livro.php" class="botao_adicionar">Adicionar</a>
         </div>
-        <table class="tabela_livros">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>ISBN</th>
-                    <th>Autor</th>
-                    <th>Genero</th>
-                    <th>Ação</th>
-                    <th>Capa</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                    $sql = 'SELECT * FROM livros';
-                    $livros = mysqli_query($conexao, $sql);
-                    if(mysqli_num_rows($livros) > 0) {
-                        foreach($livros as $livro) {
-                ?>
-                <tr>
-                    <td><?= $livro['id'] ?></td>
-                    <td><?= $livro['titulo'] ?></td>
-                    <td><?= $livro['isbn'] ?></td>
-                    <td><?= $livro['autor'] ?></td>
-                    <td><?= $livro['genero'] ?></td>
-                    <td>
-                        <div class="acao">
-                            <a href="visualizar-livro.php?id=<?= $livro['id'] ?>">Visualizar</a>
-                            <a href="editar-livro.php?id=<?= $livro['id'] ?>">Editar</a>
-                            <form action="acoes.php" method="POST" style="padding: 0;">
-                                <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="delete_livro" value="<?=$livro['id']?>">Excluir</button>
-                            </form>
-                        </div>
-                    </td>
-                    <td><img src="<?= $livro['capa'] ?>" alt="Capa: <?= $livro['titulo'] ?>" height="100px"></td>
-                </tr>
-                <?php 
-                        }
-                    } else {
-                        echo "<h5>Nenhum livro encontrado.</h5>";
+        
+
+        <div class="card-livro">
+            <?php 
+                $sql = 'SELECT * FROM livros';
+                $livros = mysqli_query($conexao, $sql);
+                if(mysqli_num_rows($livros) > 0) {
+                    foreach($livros as $livro) {
+            ?>
+            
+            <img src="<?= $livro['capa'] ?>" alt="capa" class="capa" width="100px">
+            <a href="visualizar-livro.php?id=<?= $livro['id'] ?>">comprar</a>
+            <h2 class="titulo_livro"> <?= $livro['titulo'] ?> </h2>
+            <p>ISBN: <?= $livro['isbn'] ?></p>
+            <p>Autor: <?= $livro['autor'] ?></p>
+            <p>Genero: <?= $livro['genero'] ?></p>
+
+            <?php 
                     }
-                ?>
-            </tbody>
-        </table>
+                } else {
+                    echo "<h5>Nenhum livro encontrado.</h5>";
+                }
+            ?>
+    </div>
     </main>
 </body>
 </html>
