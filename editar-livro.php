@@ -54,6 +54,10 @@
                 <input type="text" name="genero" value="<?= $livro['genero'] ?>" id="genero">
             </div> 
             <div class="input-group">
+                <label for="valor">valor</label>
+                <input type="number" name="valor" value="<?= $livro['valor'] ?>" id="valor" step="0.01">
+            </div> 
+            <div class="input-group">
                 <input type="submit" value="Salvar" name="edit_livro">
             </div> 
         </form>

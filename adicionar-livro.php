@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar livro</title>
-    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header>
@@ -39,7 +38,11 @@
                 <input type="text" name="capa" id="capa">
             </div> 
             <div class="input-group">
-                <input type="submit" value="Salvar" name="add_livro" class="salvar">
+                <label for="valor">Valor:</label>
+                <input type="number" name="valor" id="valor" step="0.01">
+            </div> 
+            <div class="input-group">
+                <input type="submit" value="Salvar" name="add_cart" class="salvar">
             </div> 
         </form>
     </main>

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livros preferidos</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/visualizar.css">
 </head>
 <body>
     <header>
@@ -16,10 +17,12 @@
         </nav>
     </header>
     <main>
-        <h2>Visualizar Livro</h2>
         <div class="voltar">
+            <h2>Visualizar Livro</h2>
             <a href="index.php" class="link_voltar">Voltar</a>
         </div>
+        <div class="info_livro">
+
             <?php 
                 if(isset($_GET['id'])) {
                     $livro_id = mysqli_real_escape_string($conexao, $_GET['id']);
@@ -34,21 +37,19 @@
             <div class="capa">
                 <img src="<?= $livro['capa'] ?>" width="200px" alt="Capa: <?= $livro['capa'] ?>">
             </div>
-            <div class="input-group">
-                <label for="titulo">Titulo:</label>
-                <p><?= $livro['titulo'] ?></p>
-            </div> 
-            <div class="input-group">
-                <label for="isbn">ISBN:</label>
-                <p><?= $livro['isbn'] ?></p>
-            </div> 
-            <div class="input-group">
-                <label for="autor">Autor:</label>
-                <p><?= $livro['autor'] ?></p>
-            </div> 
-            <div class="input-group">
-                <label for="genero">Gênero</label>
-                <p><?= $livro['genero'] ?></p>
+            <div class="dados_livro">
+                <div class="descricao">
+                    <h2 class="titulo"><?= $livro['titulo'] ?></h2>
+                    <p class="autor"><?= $livro['autor'] ?></p>
+                    <p class="genero">Gênero <?= $livro['genero'] ?></p>
+                    <p class="isbn">ISBN: <?= $livro['isbn'] ?></p>
+                    <p class="valor">R$<?= $livro['valor'] ?></p>
+                </div>
+                <form action="acoes.php" method="post" style="padding: 0;">
+                    <button type="submit" value="<?= $livro['id'] ?>" name="add_cart" class="adicionar">Adicionar ao carrinho</button>
+                    <input type="number" name="quant" class="quantidade" placeholder="Quantidade" value="1">
+                </form>
+                
             </div>
             <?php 
                     } else {
@@ -56,6 +57,7 @@
                     }
                 }
             ?>
+        </div>
     </main>
 </body>
 </html>

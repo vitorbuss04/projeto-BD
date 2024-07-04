@@ -1,0 +1,97 @@
+body {
+  background: #151862;
+}
+body main {
+  display: flex;
+  width: 100%;
+  height: 200vh;
+  flex-direction: column;
+  align-items: center;
+  gap: 55px;
+}
+body main .banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+}
+body main .banner .img-banner {
+  width: 100%;
+  height: 500px;
+  background: url(../img/img-banner.png) lightgray 50%/cover no-repeat;
+}
+body main .container-cards {
+  display: flex;
+  align-items: flex-start;
+  gap: 55px 45px;
+  flex-wrap: wrap;
+  padding: 0 40px;
+}
+body main .container-cards .container-container-cards {
+  display: flex;
+  align-items: flex-start;
+  gap: 55px 45px;
+  flex-wrap: wrap;
+  width: 96.2%;
+  margin: auto;
+}
+body main .container-cards .container-container-cards .card-produto {
+  display: flex;
+  width: 293px;
+  height: 410px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #46AADD;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
+body main .container-cards .container-container-cards .card-produto .card-content {
+  display: flex;
+  width: 247px;
+  flex-direction: column;
+  align-items: center;
+  gap: 23px;
+  flex-shrink: 0;
+}
+body main .container-cards .container-container-cards .card-produto .card-content img.card-img {
+  width: 170px;
+  box-shadow: 4px 4px 15px 2px rgba(0, 0, 0, 0.15);
+}
+body main .container-cards .container-container-cards .card-produto .card-content .card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  align-self: stretch;
+}
+body main .container-cards .container-container-cards .card-produto .card-content .card-info .card-titulo {
+  align-self: stretch;
+  color: #0A0B2B;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+body main .container-cards .container-container-cards .card-produto .card-content .card-info .card-autor {
+  align-self: stretch;
+  color: #0A0B2B;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+body main .container-cards .container-container-cards .card-produto .card-content .card-info .card-valor {
+  align-self: stretch;
+  color: #0A0B2B;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}/*# sourceMappingURL=main.css.map */
