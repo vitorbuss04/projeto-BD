@@ -8,14 +8,13 @@
 
 header {
     display: flex;
-    padding: 25px 40px;
+    padding: 10px 40px;
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
     background: rgba(70, 170, 221, 0.60);
     backdrop-filter: blur(20px);
     width: 100%;
-
     position: fixed;
     top: 0;
     
@@ -25,15 +24,14 @@ header {
         gap: 15px;
 
         .logo-img {
-            width: 70px;
-            height: 52.5px;
+            width: 50px;
             fill: #D7EDE8;
         }
     
         .logo-texto {
             color: #FFF;
             font-family: 'Poppins', sans-serif;
-            font-size: 30px;
+            font-size: 20px;
             font-style: normal;
             font-weight: 800;
             line-height: normal;
@@ -42,19 +40,20 @@ header {
 
     .container-buttons{
         display: flex;
+        align-items: center;
         gap: 20px;
         height: 53px;
         flex-shrink: 0;
 
         .botao {
             display: flex;
-            width: 122px;
-            height: 53px;
-            padding: 13px 8px;
+            width: 90px;
+            height: 40px;
+            padding: 13px 12px;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            gap: 10px;
+            gap: 8px;
             flex-shrink: 0;
             border-radius: 12px;
             border: 1px solid #f5f5f57c;
@@ -69,14 +68,13 @@ header {
                 align-self: stretch;
 
                 .button-icon {
-                    width: 24px;
-                    height: 24px;
+                    width: 15px;
                 } 
 
                 .button-texto {
                     color: #D7EDE8;
                     font-family: 'Poppins', sans-serif;
-                    font-size: 16px;
+                    font-size: 12px;
                     font-style: normal;
                     font-weight: 500;
                     line-height: normal;
