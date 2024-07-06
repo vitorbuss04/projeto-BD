@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header>
+    <header style="z-index: 1;">
 
         <div class="container-logo">
             <img src="img/logo.svg" alt="Logo" class="logo-img">
@@ -44,36 +44,33 @@
             <img src="" alt="" class="img-banner">
         </div>
 
-        <div class="container-cards">
-            <div class="container-container-cards">
-                
-                <?php 
-                        $sql = 'SELECT * FROM livros';
-                        $livros = mysqli_query($conexao, $sql);
-                        if(mysqli_num_rows($livros) > 0) {
-                            foreach($livros as $livro) {
-                ?>
+        <div class="container-cards"> 
+            <?php 
+                    $sql = 'SELECT * FROM livros';
+                    $livros = mysqli_query($conexao, $sql);
+                    if(mysqli_num_rows($livros) > 0) {
+                        foreach($livros as $livro) {
+            ?>
 
-                <a href="visualizar-livro.php?id=<?= $livro['id'] ?>" class="card-produto">
-                    <div class="card-content">
-                        <img src="<?= $livro['capa'] ?>" alt="capa" class="card-img">
-                        
-                        <div class="card-info">
+            <a href="visualizar-livro.php?id=<?= $livro['id'] ?>" class="card-produto">
+                <div class="card-content">
+                    <img src="<?= $livro['capa'] ?>" alt="capa" class="card-img">
+                    
+                    <div class="card-info">
 
-                            <h3 class="card-titulo"><?= $livro['titulo'] ?></h3>
-                            <p class="card-autor"><?= $livro['autor'] ?></p>
-                            <p class="card-valor">R$<?= $livro['valor'] ?></p>
+                        <h3 class="card-titulo"><?= $livro['titulo'] ?></h3>
+                        <p class="card-autor"><?= $livro['autor'] ?></p>
+                        <p class="card-valor">R$<?= $livro['valor'] ?></p>
 
-                        </div>
                     </div>
-                </a>
-                <?php 
-                            }
-                        } else {
-                            echo "<h5>Nenhum livro encontrado.</h5>";
+                </div>
+            </a>
+            <?php 
                         }
-                ?>
-            </div>
+                    } else {
+                        echo "<h5>Nenhum livro encontrado.</h5>";
+                    }
+            ?>
         </div>
 
     </main>

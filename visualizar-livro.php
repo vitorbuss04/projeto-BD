@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/visualizar.css">
 </head>
 <body>
-    <header>
+    <header style="z-index: 1;">
 
     <div class="container-logo">
         <img src="img/logo.svg" alt="Logo" class="logo-img">
@@ -26,7 +26,7 @@
             </div>
         </a>
 
-        <a href="carrinho1.php" class="botao">
+        <a href="carrinho.php" class="botao">
             <div class="botao-content">
                 <img src="img/carrinho.svg" alt="icone carrinho" class="button-icon">
                 <p class="button-texto">Carrinho</p>
@@ -37,11 +37,7 @@
     </header>
 
     <main>
-        <div class="container-voltar">
-
-            <a href="index.php" class="voltar-button">Voltar</a>
-
-        </div>
+        
         <div class="info-produto">
             <?php 
                     if(isset($_GET['id'])) {
@@ -65,6 +61,7 @@
                         <p class="informacoes-autor"><?= $livro['autor'] ?></p>
                         <p class="informacoes-genero"><?= $livro['genero'] ?></p>
                         <p class="informacoes-valor"><?= $livro['valor'] ?></p>
+                        <p class="sinopse"><?= $livro['Sinopse'] ?></p>
                     </div>
 
                     <form action="acoes.php" method="post" class="container-adicionar" style="padding: 0;">
@@ -81,6 +78,11 @@
                     }
                 }
             ?>
+
+        </div>
+        <div class="container-voltar">
+
+            <a href="index.php" class="voltar-button">Voltar</a>
 
         </div>
     </main>

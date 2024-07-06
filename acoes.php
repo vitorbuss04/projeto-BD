@@ -9,8 +9,10 @@
         $isbn = mysqli_real_escape_string($conexao, trim($_POST['isbn']));
         $autor = mysqli_real_escape_string($conexao, trim($_POST['autor']));
         $genero = mysqli_real_escape_string($conexao, trim($_POST['genero']));
+        $sinopse = mysqli_real_escape_string($conexao, trim($_POST['sinopse']));
+        
 
-        $sql = "INSERT INTO livros (titulo, isbn, autor, genero, capa, valor) VALUES ('$titulo', $isbn, '$autor', '$genero', '$capa', $valor)";
+        $sql = "INSERT INTO livros (titulo, isbn, autor, genero, capa, valor, sinopse) VALUES ('$titulo', $isbn, '$autor', '$genero', '$capa', $valor, '$sinopse')";
 
         mysqli_query($conexao, $sql);
         header('Location: index.php');

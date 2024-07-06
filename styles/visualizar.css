@@ -142,12 +142,14 @@ body main .info-produto .content-produto {
 }
 body main .info-produto .content-produto .container-img .capa-livro {
   width: 279px;
+  border-radius: 15px;
 }
 body main .info-produto .content-produto .container-informacoes {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 120px;
+  justify-content: space-between;
 }
 body main .info-produto .content-produto .container-informacoes .informacoes-textos {
   display: flex;
@@ -186,6 +188,15 @@ body main .info-produto .content-produto .container-informacoes .informacoes-tex
   font-style: normal;
   font-weight: 800;
   line-height: normal;
+}
+body main .info-produto .content-produto .container-informacoes .sinopse {
+  width: 308px;
+  color: #FFF;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
 }
 body main .info-produto .content-produto .container-informacoes .container-adicionar {
   display: flex;
