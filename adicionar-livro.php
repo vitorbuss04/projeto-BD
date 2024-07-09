@@ -1,3 +1,7 @@
+<?php 
+    require 'conexao.php';
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,31 +11,9 @@
     <link rel="stylesheet" href="styles/adicionar.css">
 </head>
 <body>
-    <header style="z-index: 1;">
-
-    <div class="container-logo">
-        <img src="img/logo.svg" alt="Logo" class="logo-img">
-        <h1 class="logo-texto">Livraria do Buss</h1>
-    </div>
-
-    <div class="container-buttons">
-
-        <a href="adicionar-livro.php" class="botao">
-            <div class="botao-content">
-                <img src="img/plus.svg" alt="icone adicionar" class="button-icon">
-                <p class="button-texto">Adicionar</p>
-            </div>
-        </a>
-
-        <a href="carrinho.php" class="botao">
-            <div class="botao-content">
-                <img src="img/carrinho.svg" alt="icone carrinho" class="button-icon">
-                <p class="button-texto">Carrinho</p>
-            </div>
-        </a>
-
-    </div>
-    </header>
+    <?php 
+        include 'header.php';
+    ?>
 
     <main>
 
@@ -79,7 +61,8 @@
                     <div class="input-group">
     
                         <label for="sinopse" class="label">Sinopse</label>
-                        <input type="text" class="input sinopse" name="sinopse" id="sinopse" size="1000">
+                        <textarea type="text" class="input sinopse" name="sinopse" id="sinopse" size="1000">
+                        </textarea>
     
                     </div>
                     <div class="input-group">

@@ -44,8 +44,6 @@ header .container-buttons {
 }
 header .container-buttons .botao {
   display: flex;
-  width: 90px;
-  height: 40px;
   padding: 13px 12px;
   flex-direction: column;
   justify-content: center;
@@ -56,6 +54,7 @@ header .container-buttons .botao {
   border: 1px solid rgba(245, 245, 245, 0.4862745098);
   background: #46AADD;
   text-decoration: none;
+  font-size: 18px;
 }
 header .container-buttons .botao .botao-content {
   display: flex;

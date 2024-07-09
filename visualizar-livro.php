@@ -1,5 +1,6 @@
 <?php 
     require 'conexao.php';
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,31 +11,9 @@
     <link rel="stylesheet" href="styles/visualizar.css">
 </head>
 <body>
-    <header style="z-index: 1;">
-
-    <div class="container-logo">
-        <img src="img/logo.svg" alt="Logo" class="logo-img">
-        <h1 class="logo-texto">Livraria do Buss</h1>
-    </div>
-
-    <div class="container-buttons">
-
-        <a href="adicionar-livro.php" class="botao">
-            <div class="botao-content">
-                <img src="img/plus.svg" alt="icone adicionar" class="button-icon">
-                <p class="button-texto">Adicionar</p>
-            </div>
-        </a>
-
-        <a href="carrinho.php" class="botao">
-            <div class="botao-content">
-                <img src="img/carrinho.svg" alt="icone carrinho" class="button-icon">
-                <p class="button-texto">Carrinho</p>
-            </div>
-        </a>
-
-    </div>
-    </header>
+    <?php 
+        include 'header.php';
+    ?>
 
     <main>
         
@@ -67,7 +46,7 @@
                     <form action="acoes.php" method="post" class="container-adicionar" style="padding: 0;">
                         <button type="submit" class="botao-adicionar" name="add_cart" value="<?= $livro['id'] ?>" >Adicionar ao carrinho</button>
 
-                        <input type="number" class="quantidade" value="<?= $livro['id'] ?>" name="quant">
+                        <input type="number" class="quantidade" value="1" name="quant">
                     </form>
                 </div>
 

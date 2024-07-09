@@ -1,5 +1,30 @@
 <?php
     require 'conexao.php';
+    session_start();
+
+    if(isset($_POST['add_usuario'])) {
+
+        $usuario = $_POST['usuario'];
+        $senha = $_POST['senha'];
+
+        $sql = "SELECT NOME FROM USUARIOS WHERE NOME = '$usuario'";
+        $query = mysqli_query($conexao, $sql);
+
+        if (mysqli_affected_rows($conexao) > 0) {
+            echo "Erro ao adicionar";
+
+        } else {
+            $sql = "INSERT INTO USUARIOS (NOME, SENHA) VALUES ('$usuario', '$senha')";
+            $query = mysqli_query($conexao, $sql);
+
+            if(mysqli_affected_rows($conexao) > 0) {
+                echo "Adicionado com sucesso";
+            }
+        }
+
+    }
+
+    
 
     if(isset($_POST['add_livro'])) {
         
@@ -55,6 +80,13 @@
 
     if(isset($_POST['add_cart'])) {
         $livro_id = $_POST['add_cart'];
+        $user = $_SESSION['login'];
+        $senha = $_SESSION['senha'];
+        $sql = "SELECT ID_USER FROM USUARIOS WHERE NOME = '$user' AND SENHA = '$senha'";
+        $query = mysqli_query($conexao, $sql);
+        $usuario = mysqli_fetch_array($query);
+        $userID = $usuario['ID_USER'];
+
         $sql = "SELECT * FROM livros WHERE id = $livro_id";
         $query = mysqli_query($conexao, $sql);
 
@@ -63,8 +95,9 @@
             $nome = $livro['titulo'];
             $quant = $_POST['quant'];
             $valor = $livro['valor'] * $quant;
+
             
-            $sql = "INSERT INTO carrinho (id_produto, valor, quant, nome_produto) VALUES ($livro_id, $valor, $quant, '$nome')";
+            $sql = "INSERT INTO carrinho (id_produto, valor, quant, nome_produto, id_user) VALUES ($livro_id, $valor, $quant, '$nome', $userID)";
 
             mysqli_query($conexao, $sql);
 
