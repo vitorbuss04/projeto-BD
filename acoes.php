@@ -2,30 +2,6 @@
     require 'conexao.php';
     session_start();
 
-    if(isset($_POST['add_usuario'])) {
-
-        $usuario = $_POST['usuario'];
-        $senha = $_POST['senha'];
-
-        $sql = "SELECT NOME FROM USUARIOS WHERE NOME = '$usuario'";
-        $query = mysqli_query($conexao, $sql);
-
-        if (mysqli_affected_rows($conexao) > 0) {
-            echo "Erro ao adicionar";
-
-        } else {
-            $sql = "INSERT INTO USUARIOS (NOME, SENHA) VALUES ('$usuario', '$senha')";
-            $query = mysqli_query($conexao, $sql);
-
-            if(mysqli_affected_rows($conexao) > 0) {
-                echo "Adicionado com sucesso";
-            }
-        }
-
-    }
-
-    
-
     if(isset($_POST['add_livro'])) {
         
         $capa = mysqli_real_escape_string($conexao, trim($_POST['capa']));
@@ -107,8 +83,6 @@
             } else {
                 echo "livro não foi adicionado.";
             }
-
-            
         }
         
     }

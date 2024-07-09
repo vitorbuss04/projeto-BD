@@ -49,10 +49,12 @@
             
                     } else {
                         $sql = "INSERT INTO USUARIOS (NOME, SENHA) VALUES ('$usuario', '$senha')";
-                        $query = mysqli_query($conexao, $sql);
+                        mysqli_query($conexao, $sql);
             
                         if(mysqli_affected_rows($conexao) > 0) {
                             header('Location: login.php');
+                        } else {
+                            echo "erro ao adicionar usuario";
                         }
                     }
             

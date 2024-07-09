@@ -26,10 +26,10 @@
 
         <div class="container-cards"> 
             <?php 
-                    $sql = 'SELECT * FROM livros';
-                    $livros = mysqli_query($conexao, $sql);
-                    if(mysqli_num_rows($livros) > 0) {
-                        foreach($livros as $livro) {
+                $sql = 'SELECT * FROM livros';
+                $livros = mysqli_query($conexao, $sql);
+                if(mysqli_num_rows($livros) > 0) {
+                    foreach($livros as $livro) {
             ?>
 
             <a href="visualizar-livro.php?id=<?= $livro['id'] ?>" class="card-produto">
@@ -46,10 +46,10 @@
                 </div>
             </a>
             <?php 
-                        }
-                    } else {
-                        echo "<h5>Nenhum livro encontrado.</h5>";
                     }
+                } else {
+                    echo "<h5>Nenhum livro encontrado.</h5>";
+                }
             ?>
         </div>
 
