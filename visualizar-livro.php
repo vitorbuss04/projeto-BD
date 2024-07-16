@@ -46,7 +46,7 @@
                     <form action="acoes.php" method="post" class="container-adicionar" style="padding: 0;">
                         <button type="submit" class="botao-adicionar" name="add_cart" value="<?= $livro['id'] ?>" >Adicionar ao carrinho</button>
 
-                        <input type="number" class="quantidade" value="1" name="quant">
+                        <input type="number" class="quantidade" value="1" name="quant" max="20">
                     </form>
                 </div>
 
